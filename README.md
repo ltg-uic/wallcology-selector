@@ -1,4 +1,4 @@
-# population-app
+# wallcology-selector
 
 An element providing a starting point for your own reusable Polymer elements.
 
@@ -33,7 +33,7 @@ Once running, you can preview your element at
 ## Using it in code
 
 
-		<wallcology-selector max-selections="2" selected-bugs="{{selectedBugs}}"></wallcology-selector>
+	    <wallcology-selector max-selections="2" selected-bugs="{{selectedBugs}}"></wallcology-selector>
 	
 	
 	    selected bugs:

@@ -2,8 +2,7 @@
 
 An element providing a starting point for your own reusable Polymer elements.
 
-file:///.file/id=6571367.17995743
-
+![][image-1]
 ## Dependencies
 
 Element dependencies are managed via [Bower][1]. You can
@@ -52,3 +51,5 @@ you are using Polyserve: `http://localhost:8080/components/wallcology-selector/i
 
 [1]:	http://bower.io/
 [2]:	https://github.com/PolymerLabs/polyserve
+
+[image-1]:	cap.png

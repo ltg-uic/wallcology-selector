@@ -30,8 +30,13 @@ And you can run it via:
 Once running, you can preview your element at
 `http://localhost:8080/components/wallcology-selector/index.html`, 
 
+## To install in your app
+
+ `bower install https://github.com/ltg-uic/wallcology-selector.git --save`
+
 ## Using it in code
 
+        selectedBugs is an array property, see test-app.html
 
 	    <wallcology-selector max-selections="2" selected-bugs="{{selectedBugs}}"></wallcology-selector>
 	

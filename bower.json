@@ -32,5 +32,9 @@
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ltg-uic/wallcology-selector.git"
   }
 }

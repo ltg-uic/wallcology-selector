@@ -139,6 +139,12 @@
                     }
                     this.selectedBugs = [];
 
+                    var allToggles = this.$.key.querySelectorAll('paper-button');
+                    for (var i = 0; i < allToggles.length; i++) {
+                        var b = allToggles[i];
+                        b.active = false;
+                    }
+
                     console.log('current habitat ' + this.currentHabitat.name);
                 }
             },

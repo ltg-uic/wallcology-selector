@@ -8,7 +8,7 @@
     <link href="../paper-styles/paper-styles.html" rel="import">
 
     <link href="../paper-button/paper-button.html" rel="import">
-
+    <link href="../paper-icon-button/paper-icon-button.html" rel="import">
 
     <link href="../iron-ajax/iron-ajax.html" rel="import">
     <link href="../iron-flex-layout/iron-flex-layout.html" rel="import">
@@ -20,7 +20,9 @@
     <link href="../iron-iconset-svg/iron-iconset-svg.html" rel="import">
     <link href="../iron-iconset/iron-iconset.html" rel="import">
 
-    <link href="icons/wallcology-icons.html" rel="import">
+    <script src="../predicates.js/browser/predicates.js"></script>
+
+
 </head>
 
 <dom-module id="wallcology-selector">
@@ -53,46 +55,43 @@
             @apply(--layout-center);
         }
 
-        paper-button[toggles].selector {
+        paper-icon-button[toggles].selector {
             margin: 0px;
             padding: 0px;
         }
 
-        paper-button[toggles] {
+        paper-icon-button[toggles] {
             transition: background-color 0.3s;
 
         }
 
-        paper-button[toggles][active] {
+        paper-icon-button[toggles][active] {
             background-color: rgba(255, 233, 33, 0.25);
+            border-radius: 25px;
+        }
+        paper-icon-button[toggles][disabled] {
+            opacity: 0.25;
+            border-radius: 25px;
+        }
+
+        .spacer {
+            margin: 5px;
         }
 
     </style>
-    <template>
-        <iron-ajax id="habitatAjax"
-                   contentType="application/json"
-                   url="http://beta.json-generator.com/api/json/get/NkcQCTno"
-                   params=""
-                   handle-as="json"
-                   on-response="handleHabitatResponse" loading="{{loading}}" method="GET" auto verbose>
-        </iron-ajax>
+    <template id="layout">
 
         <div class="horizontal layout">
-            <div class="vcontainer">
-                <paper-button active class="colorful" id="habitatButton" on-tap="habitatSelectionChanged">{{currentHabitat.name}}</paper-button>
+            <div class="vcontainer spacer">
+                <paper-button active class="colorful" on-tap="toggleTapped"><span>{{currentToggle.name}}</span></paper-button>
             </div>
-            <div id="key">
-            <template is="dom-repeat" items="{{currentHabitat.bugs}}">
-
-                    <paper-button toggles on-active-changed="toggleTapped" id="{{index}}" class="selector">
-                        <iron-icon class="bug" icon="{{iconColor(item)}}"></iron-icon>
-                    </paper-button>
-
+            <div id="key" class="spacer">
+            <template id="buttonTemplate" is="dom-repeat" items="{{buttonSelectors}}">
+                    <paper-icon-button toggles disabled id="{{index}}"  on-tap="buttonTapped"  src="{{item.imgUrl}}" class="bug selector"></paper-icon-button>
             </template>
             </div>
 
         </div>
-
 
     </template>
 
@@ -104,128 +103,150 @@
             // add properties and methods on the element's prototype
             properties: {
                 // declare properties for the element's public API
-                habitats: {
+                selectedItems: {
                     type: Array,
                     notify: true,
-                    value: []
-                },
-                selectedBugs: {
-                    type: Array,
-                    notify: true,
-                },
-                currentHabitat: {
-                    type: Object,
-                    notify: true,
-                    value: {}
                 },
                 maxSelections: {
                     type: Number,
                     notify: true,
                     value: 0
+                },
+                currentToggle: {
+                    type: Object,
+                    notify: true,
+                    value: {}
+                },
+                toggleSelectors: {
+                    type: Array,
+                    notify: true,
+                    value: []
+                },
+                buttonSelectors: {
+                    type: Array,
+                    notify: true,
+                    value: []
                 }
             },
             observers: [
-                'selectedBugsChanged(selectedBugs.*)'
+                'selectedItemsChanged(selectedItems.*)',
+                'toggleSelectorsChanged(toggleSelectors.*)',
+                'buttonSelectorsChanged(buttonSelectors.*)'
             ],
-            habitatSelectionChanged: function (e) {
-                if (this.habitats !== undefined) {
-
-                    var currentIndex = this.currentHabitat.index;
-                    if( currentIndex + 1 == this.habitats.length ) {
-                        currentIndex = 0;
-                        this.currentHabitat = this.habitats[0];
-                    } else {
-                        this.currentHabitat = this.habitats[++currentIndex];
-                    }
-                    this.selectedBugs = [];
-
-                    var allToggles = this.$.key.querySelectorAll('paper-button');
-                    for (var i = 0; i < allToggles.length; i++) {
-                        var b = allToggles[i];
-                        b.active = false;
-                    }
-
-                    console.log('current habitat ' + this.currentHabitat.name);
+            selectedItemsChanged: function (changeRecord) {
+                if (changeRecord.value !== null && this.selectedItems[0] !== null) {
                 }
             },
-            selectedBugsChanged: function (changeRecord) {
-                if (changeRecord.value !== null && this.selectedBugs[0] !== null) {
-                    console.log('SELECTED BUGS:' + this.selectedBugs)
+            buttonSelectorsChanged: function (changeRecord) {
+                if (changeRecord.path == 'buttonSelectors.splices') {
+                    // a user was added or removed
+                } else {
+                    // an individual user or its sub-properties changed
+                    // check "changeRecord.path" to determine what changed
+                }
+            },
+            toggleSelectorsChanged: function(changeRecord){
+                console.log('toggle', changeRecord);
+                if( this.currentToggle.name === undefined && this.toggleSelectors[0] !== undefined  ) {
+                    for( var i =  0; i < this.toggleSelectors.length; i++) {
+                        if( this.toggleSelectors[i].index === -1 ) {
+                            this.currentToggle = this.toggleSelectors[i];
+                            this.disableButtons(undefined);
+                        }
+                    }
                 }
             },
             toggleTapped: function (e) {
+                console.log('toggle tapped');
+                if( this.currentToggle !== undefined ) {
+                    var previousIndex = this.currentToggle.index;
+                    var newIndex = previousIndex + 1;
+
+                    var nextToggle = this.findToggle(newIndex)
+
+                    if( nextToggle !== undefined ) {
+                        this.currentToggle = nextToggle;
+                        this.disableButtons(nextToggle.items);
+
+
+                    } else {
+                        this.currentToggle = this.findToggle(-1);
+                        this.disableButtons(undefined);
+                    }
+                }
+            },
+            disableButtons: function(buttonIndexes) {
+                if( buttonIndexes === undefined ) {
+                    //disable all array
+                    var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
+                    for( var i = 0; i < buttons.length; i++) {
+                        var b = buttons[i];
+
+
+                            b.disabled = true;
+
+
+                    }
+                } else {
+                    console.log('indexs to disable', buttonIndexes);
+                    var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
+                    for( var i = 0; i < buttons.length; i++) {
+                        var b = buttons[i];
+                        var doesContain = predicates.in(buttonIndexes);
+                        var bIndex = parseInt(b.id);
+                        var truth = doesContain(bIndex);
+                        if( truth ) {
+                            b.disabled = false;
+                        } else {
+                            b.disabled = true;
+                        }
+
+                    }
+                }
+            },
+            buttonTapped: function (e) {
 
                 if( !this.hasMaxSelections() ) {
-                    var bugIndex = e.currentTarget.id;
+                    var selectedItem = e.model.item;
 
                     if (e.currentTarget.active) {
-                        this.push('selectedBugs', bugIndex);
+                        this.push('selectedItems', selectedItem);
                     } else {
-                        var bugColorIndex = this.selectedBugs.indexOf(bugIndex);
-                        if (bugColorIndex !== -1) {
-                            this.splice('selectedBugs', bugColorIndex, 1);
-                        }
+
+                        this.splice('selectedItems', selectedItem, 1);
+
                     }
                 } else {
                     console.log('TOO MANY SELECTIONS');
                     e.currentTarget.active = false;
                 }
-
             },
             hasMaxSelections: function() {
-                var allToggles = this.$.key.querySelectorAll('paper-button');
-                var toggled = 0;
-                for(var i = 0; i < allToggles.length; i++ ){
-                    var b = allToggles[i];
+
+                var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
+                var active = 0;
+                for( var i = 0; i < buttons.length; i++) {
+                    var b = buttons[i];
                     if(b.active) {
-                        toggled++;
+                        active++;
                     }
                 }
-                if( toggled > this.maxSelections ) {
+
+                if( active > this.maxSelections ) {
                     console.log('max selections' + this.maxSelections);
                     return true;
                 }
                 return false;
             },
-            handleHabitatResponse: function (e) {
-                this.habitats = this.$.habitatAjax.lastResponse;
-
-
-
-                for (var i = 0; i < this.habitats.length; i++) {
-                    console.log(this.habitats[i].index = i);
+            findToggle: function(index) {
+                for(var i = 0; i < this.toggleSelectors.length; i++) {
+                    if( index === this.toggleSelectors[i].index ) {
+                        return this.toggleSelectors[i];
+                    }
                 }
-
-                this.currentHabitat = this.habitats[0];
-                this.$.habitatButton.label = 'HABITAT ' + this.currentHabitat.index;
+                return undefined;
             },
-            iconColor: function (color) {
-                return 'wallcology-icons:' + color;
-            },
-            generateHabitatColor: function (hIndex) {
-                var color;
 
-                switch (hIndex) {
-                    case '0':
-                        color = '#42a5f5'; //blue 400
-                        break;
-                    case '1':
-                        color = '#ff6f43'; //orange
-                        break;
-                    case '2':
-                        color = '#26a79a'; //teal
-                        break;
-                    case '3':
-                        color = '#8D6E63'; //brown
-                        break;
-                    default:
-                        color = 'white';
-                }
-
-                return 'background-color: ' + color;
-
-
-            },
             toUpperCase: function (someString) {
                 if (someString !== null) {
                     return someString.toUpperCase();
@@ -233,9 +254,9 @@
                 return null;
             },
             ready: function () {
-                this.currentHabitat = {};
-                this.selectedBugs = [];
-                this.habitats = [];
+                this.selectedItems = [];
+                this.buttonSelectors = [];
+                this.toggleSelectors = [];
             }
         });
     </script>

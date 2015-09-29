@@ -43,8 +43,8 @@
         }
 
         .vcontainer {
-            @apply(--layout-horizontal);
-            @apply(--layout-center);
+        @apply(- -layout-horizontal);
+        @apply(- -layout-center);
         }
 
         paper-icon-button[toggles].selector {
@@ -61,6 +61,7 @@
             background-color: rgba(255, 233, 33, 0.25);
             border-radius: 25px;
         }
+
         paper-icon-button[toggles][disabled] {
             opacity: 0.25;
             border-radius: 25px;
@@ -75,12 +76,14 @@
 
         <div class="horizontal layout">
             <div class="vcontainer spacer">
-                <paper-button active class="colorful" on-tap="toggleTapped"><span>{{currentToggle.name}}</span></paper-button>
+                <paper-button active class="colorful" on-tap="toggleTapped"><span>{{currentToggle.name}}</span>
+                </paper-button>
             </div>
             <div id="key" class="spacer">
-            <template id="buttonTemplate" is="dom-repeat" items="{{buttonSelectors}}">
-                    <paper-icon-button toggles disabled id="{{index}}"  on-tap="buttonTapped"  src="{{item.imgUrl}}" class="bug selector"></paper-icon-button>
-            </template>
+                <template id="buttonTemplate" is="dom-repeat" items="{{buttonSelectors}}">
+                    <paper-icon-button toggles disabled id="{{index}}" on-tap="buttonTapped" src="{{item.imgUrl}}"
+                                       class="bug selector"></paper-icon-button>
+                </template>
             </div>
 
         </div>
@@ -137,11 +140,11 @@
                     // check "changeRecord.path" to determine what changed
                 }
             },
-            toggleSelectorsChanged: function(changeRecord){
+            toggleSelectorsChanged: function (changeRecord) {
                 console.log('toggle', changeRecord);
-                if( this.currentToggle.name === undefined && this.toggleSelectors[0] !== undefined  ) {
-                    for( var i =  0; i < this.toggleSelectors.length; i++) {
-                        if( this.toggleSelectors[i].index === -1 ) {
+                if (this.currentToggle.name === undefined && this.toggleSelectors[0] !== undefined) {
+                    for (var i = 0; i < this.toggleSelectors.length; i++) {
+                        if (this.toggleSelectors[i].index === -1) {
                             this.currentToggle = this.toggleSelectors[i];
                             this.disableButtons(undefined);
                         }
@@ -150,7 +153,7 @@
             },
             toggleTapped: function (e) {
                 console.log('toggle tapped');
-                if( this.currentToggle !== undefined ) {
+                if (this.currentToggle !== undefined) {
 
                     //clear all the selections
                     for (var i = 0; i < this.selectedItems.length; i++) {
@@ -166,7 +169,7 @@
 
                     var nextToggle = this.findToggle(newIndex);
 
-                    if( nextToggle !== undefined ) {
+                    if (nextToggle !== undefined) {
                         this.currentToggle = nextToggle;
                         this.disableButtons(nextToggle.items);
 
@@ -179,30 +182,30 @@
 
                 }
             },
-            inactivateButtons: function() {
+            inactivateButtons: function () {
                 var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
-                for( var i = 0; i < buttons.length; i++) {
+                for (var i = 0; i < buttons.length; i++) {
                     var b = buttons[i];
                     b.active = false;
                 }
             },
-            disableButtons: function(buttonIndexes) {
-                if( buttonIndexes === undefined ) {
+            disableButtons: function (buttonIndexes) {
+                if (buttonIndexes === undefined) {
                     //disable all array
                     var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
-                    for( var i = 0; i < buttons.length; i++) {
+                    for (var i = 0; i < buttons.length; i++) {
                         var b = buttons[i];
-                            b.disabled = true;
+                        b.disabled = true;
                     }
                 } else {
                     console.log('indexs to disable', buttonIndexes);
                     var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
-                    for( var i = 0; i < buttons.length; i++) {
+                    for (var i = 0; i < buttons.length; i++) {
                         var b = buttons[i];
                         var doesContain = predicates.in(buttonIndexes);
                         var bIndex = parseInt(b.id);
                         var truth = doesContain(bIndex);
-                        if( truth ) {
+                        if (truth) {
                             b.disabled = false;
                         } else {
                             b.disabled = true;
@@ -213,7 +216,7 @@
             },
             buttonTapped: function (e) {
 
-                if( !this.hasMaxSelections() ) {
+                if (!this.hasMaxSelections()) {
                     var selectedItem = e.model.item;
 
                     if (e.currentTarget.active) {
@@ -228,14 +231,14 @@
                     e.currentTarget.active = false;
                 }
             },
-            switchToggleAndButtonSelectors: function(toggleIndex, buttonIndexes) {
+            switchToggleAndButtonSelectors: function (toggleIndex, buttonIndexes) {
 
                 //do the buttons
                 this.selectedItems = [];
                 var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
-                for( var i = 0; i < buttons.length; i++) {
+                for (var i = 0; i < buttons.length; i++) {
                     var b = buttons[i];
-                    if( buttonIndexes.lastIndexOf(i) !== -1 ) {
+                    if (buttonIndexes.lastIndexOf(i) !== -1) {
                         b.disabled = false;
                         b.active = true;
                         this.push('selectedItems', this.buttonSelectors[i]);
@@ -252,26 +255,26 @@
 
 
             },
-            hasMaxSelections: function() {
+            hasMaxSelections: function () {
 
                 var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
                 var active = 0;
-                for( var i = 0; i < buttons.length; i++) {
+                for (var i = 0; i < buttons.length; i++) {
                     var b = buttons[i];
-                    if(b.active) {
+                    if (b.active) {
                         active++;
                     }
                 }
 
-                if( active > this.maxSelections ) {
+                if (active > this.maxSelections) {
                     console.log('max selections' + this.maxSelections);
                     return true;
                 }
                 return false;
             },
-            findToggle: function(index) {
-                for(var i = 0; i < this.toggleSelectors.length; i++) {
-                    if( index === this.toggleSelectors[i].index ) {
+            findToggle: function (index) {
+                for (var i = 0; i < this.toggleSelectors.length; i++) {
+                    if (index === this.toggleSelectors[i].index) {
                         return this.toggleSelectors[i];
                     }
                 }

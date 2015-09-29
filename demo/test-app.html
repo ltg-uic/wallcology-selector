@@ -9,27 +9,31 @@
 
 <dom-module id="test-app">
     <style>
-
+        paper-button.colorful {
+            color: white;
+            background: var(--paper-blue-500);
+        }
     </style>
     <template>
 
 
-        <nutella-connector connected={{connected}} id="nutellaConn" host="127.0.0.1" appid="wallcology" runid="default"
-                        componentid="wallcology_admin"></nutella-connector>
+        <!--<nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology" runid="default"-->
+        <!--componentid="wallcology_admin"></nutella-connector>-->
 
-        <wallcology-selector  toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
-                             max-selections="2" selected-items="{{selectedItems}}" current-toggle="{{currentToggle}}"></wallcology-selector>
-
+        <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
+                             max-selections="4" selected-items="{{selectedItems}}"
+                             current-toggle="{{currentToggle}}"></wallcology-selector>
 
 
         <div>currentToggle:<span>{{currentToggle.name}}</span></div>
 
 
-        <div>selectedButtons
-        <template is="dom-repeat" items="{{selectedItems}}">
-            <span>{{item}}</span>
-        </template></div>
+        <!--         <div>selectedButtons
+                <template is="dom-repeat" items="{{selectedItems}}">
+                    <span>{{item}}</span>
+                </template></div> -->
 
+        <paper-button active class="colorful" on-tap="testSwitchTapped"><span>switch to 0,[0,4,5]</span></paper-button>
 
 
     </template>
@@ -56,12 +60,104 @@
                 toggleSelectors: {
                     type: Array,
                     notify: true,
-                    value: []
+                    value: [
+                        {
+                            'items': [],
+                            'name': 'Habitat ?',
+                            'index': -1
+                        },
+                        {
+                            'items': [
+                                0,
+                                1,
+                                4,
+                                5
+                            ],
+                            'name': 'Habitat 1',
+                            'index': 0
+                        },
+                        {
+                            'items': [
+                                0,
+                                1,
+                                10,
+                                11
+                            ],
+                            'name': 'Habitat 2',
+                            'index': 1
+                        },
+                        {
+                            'items': [
+                                0,
+                                1,
+                                7,
+                                9
+                            ],
+                            'name': 'Habitat 3',
+                            'index': 2
+                        },
+                        {
+                            'items': [
+                                0,
+                                5,
+                                6,
+                                10,
+                                12
+                            ],
+                            'name': 'Habitat 4',
+                            'index': 3
+                        }
+                    ]
                 },
                 buttonSelectors: {
                     type: Array,
                     notify: true,
-                    value: []
+                    value: [
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_01.svg",
+                            "index": 0
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_02.svg",
+                            "index": 1
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_03.svg",
+                            "index": 2
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_04.svg",
+                            "index": 3
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_05.svg",
+                            "index": 4
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_06.svg",
+                            "index": 5
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_07.svg",
+                            "index": 6
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_08.svg",
+                            "index": 7
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_09.svg",
+                            "index": 8
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_10.svg",
+                            "index": 9
+                        },
+                        {
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_11.svg",
+                            "index": 10
+                        },
+                    ]
                 },
                 connected: {
                     type: Boolean,
@@ -85,13 +181,16 @@
 
                 }
             },
-            toggleSelectorsChanged: function(changeRecord){
+            testSwitchTapped: function (e) {
+                this.$.ws.switchToggleAndButtonSelectors(3, [0, 4, 5]);
+            },
+            toggleSelectorsChanged: function (changeRecord) {
 
             },
             buttonSelectorsChanged: function (changeRecord) {
 
             },
-            currentToggleChanged: function(newValue, oldValue){
+            currentToggleChanged: function (newValue, oldValue) {
                 console.log('toggle changed test-app', newValue, oldValue);
             },
             connectedChanged: function (newValue, oldValue) {
@@ -117,8 +216,15 @@
             },
             ready: function () {
                 this.selectedItems = [];
-                this.buttonSelectors = [];
-                this.toggleSelectors = [];
+
+                var start = [{
+                    'items': [],
+                    'name': 'Habitat ?  ',
+                    'index': -1
+                }];
+                this.toggleSelectors = start.concat(this.toggleSelectors);
+//                this.buttonSelectors = [];
+//                this.toggleSelectors = [];
             }
         });
     </script>

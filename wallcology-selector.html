@@ -164,7 +164,7 @@
                     var previousIndex = this.currentToggle.index;
                     var newIndex = previousIndex + 1;
 
-                    var nextToggle = this.findToggle(newIndex)
+                    var nextToggle = this.findToggle(newIndex);
 
                     if( nextToggle !== undefined ) {
                         this.currentToggle = nextToggle;
@@ -227,6 +227,30 @@
                     console.log('TOO MANY SELECTIONS');
                     e.currentTarget.active = false;
                 }
+            },
+            switchToggleAndButtonSelectors: function(toggleIndex, buttonIndexes) {
+
+                //do the buttons
+                this.selectedItems = [];
+                var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
+                for( var i = 0; i < buttons.length; i++) {
+                    var b = buttons[i];
+                    if( buttonIndexes.lastIndexOf(i) !== -1 ) {
+                        b.disabled = false;
+                        b.active = true;
+                        this.push('selectedItems', this.buttonSelectors[i]);
+                    } else {
+                        b.active = false;
+                        b.disabled = true;
+                    }
+
+                }
+
+                //do the toggle
+                var toggle = this.findToggle(toggleIndex);
+                this.currentToggle = toggle;
+
+
             },
             hasMaxSelections: function() {
 

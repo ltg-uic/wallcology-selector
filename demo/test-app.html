@@ -9,7 +9,10 @@
 
 <dom-module id="test-app">
     <style>
-
+        paper-button.colorful {
+            color: white;
+            background: var(--paper-blue-500);
+        }
     </style>
     <template>
 
@@ -17,8 +20,8 @@
         <!--<nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology" runid="default"-->
                         <!--componentid="wallcology_admin"></nutella-connector>-->
 
-        <wallcology-selector  toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
-                             max-selections="2" selected-items="{{selectedItems}}" current-toggle="{{currentToggle}}"></wallcology-selector>
+        <wallcology-selector id="ws"  toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
+                             max-selections="4" selected-items="{{selectedItems}}" current-toggle="{{currentToggle}}"></wallcology-selector>
 
 
 
@@ -29,6 +32,9 @@
         <template is="dom-repeat" items="{{selectedItems}}">
             <span>{{item}}</span>
         </template></div>
+
+        <paper-button active class="colorful" on-tap="testSwitchTapped"><span>switch to 0,[0,4,5]</span></paper-button>
+
 
 
 
@@ -161,20 +167,16 @@
                             "index": 10
                         },
                         {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_12.svg",
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_brick.svg",
                             "index": 11
                         },
                         {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_brick.svg",
+                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_pipes.svg",
                             "index": 12
                         },
                         {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_pipes.svg",
-                            "index": 13
-                        },
-                        {
                             "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_temp.svg",
-                            "index": 14
+                            "index": 13
                         }
                     ]
                 },
@@ -199,6 +201,9 @@
 
 
                 }
+            },
+            testSwitchTapped: function(e) {
+                this.$.ws.switchToggleAndButtonSelectors(3,[0,4,5]);
             },
             toggleSelectorsChanged: function(changeRecord){
 

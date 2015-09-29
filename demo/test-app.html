@@ -18,24 +18,22 @@
 
 
         <!--<nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology" runid="default"-->
-                        <!--componentid="wallcology_admin"></nutella-connector>-->
+        <!--componentid="wallcology_admin"></nutella-connector>-->
 
-        <wallcology-selector id="ws"  toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
-                             max-selections="4" selected-items="{{selectedItems}}" current-toggle="{{currentToggle}}"></wallcology-selector>
-
+        <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
+                             max-selections="4" selected-items="{{selectedItems}}"
+                             current-toggle="{{currentToggle}}"></wallcology-selector>
 
 
         <div>currentToggle:<span>{{currentToggle.name}}</span></div>
 
 
-        <div>selectedButtons
-        <template is="dom-repeat" items="{{selectedItems}}">
-            <span>{{item}}</span>
-        </template></div>
+        <!--         <div>selectedButtons
+                <template is="dom-repeat" items="{{selectedItems}}">
+                    <span>{{item}}</span>
+                </template></div> -->
 
         <paper-button active class="colorful" on-tap="testSwitchTapped"><span>switch to 0,[0,4,5]</span></paper-button>
-
-
 
 
     </template>
@@ -64,57 +62,50 @@
                     notify: true,
                     value: [
                         {
-                            "items": [
+                            'items': [],
+                            'name': 'Habitat ?',
+                            'index': -1
+                        },
+                        {
+                            'items': [
                                 0,
                                 1,
                                 4,
                                 5
                             ],
-                            "name": "Habitat 1",
-                            "index": 0,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 1',
+                            'index': 0
                         },
                         {
-                            "items": [
+                            'items': [
                                 0,
                                 1,
                                 10,
                                 11
                             ],
-                            "name": "Habitat 2",
-                            "index": 1,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 2',
+                            'index': 1
                         },
                         {
-                            "items": [
+                            'items': [
                                 0,
                                 1,
                                 7,
                                 9
                             ],
-                            "name": "Habitat 3",
-                            "index": 2,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 3',
+                            'index': 2
                         },
                         {
-                            "items": [
+                            'items': [
                                 0,
                                 5,
                                 6,
                                 10,
                                 12
                             ],
-                            "name": "Habitat 4",
-                            "index": 3,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 4',
+                            'index': 3
                         }
                     ]
                 },
@@ -166,18 +157,6 @@
                             "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_11.svg",
                             "index": 10
                         },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_brick.svg",
-                            "index": 11
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_pipes.svg",
-                            "index": 12
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/env_temp.svg",
-                            "index": 13
-                        }
                     ]
                 },
                 connected: {
@@ -202,16 +181,16 @@
 
                 }
             },
-            testSwitchTapped: function(e) {
-                this.$.ws.switchToggleAndButtonSelectors(3,[0,4,5]);
+            testSwitchTapped: function (e) {
+                this.$.ws.switchToggleAndButtonSelectors(3, [0, 4, 5]);
             },
-            toggleSelectorsChanged: function(changeRecord){
+            toggleSelectorsChanged: function (changeRecord) {
 
             },
             buttonSelectorsChanged: function (changeRecord) {
 
             },
-            currentToggleChanged: function(newValue, oldValue){
+            currentToggleChanged: function (newValue, oldValue) {
                 console.log('toggle changed test-app', newValue, oldValue);
             },
             connectedChanged: function (newValue, oldValue) {

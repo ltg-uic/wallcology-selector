@@ -3,7 +3,7 @@
     <link href="../../polymer/polymer.html" rel="import">
     <link href="../wallcology-selector.html" rel="import">
 
-    <!-- <link href="../../nutella-connector/nutella-connector.html" rel="import"> -->
+    <link href="../../nutella-connector/nutella-connector.html" rel="import">
 </head>
 
 <dom-module id="test-app">
@@ -11,6 +11,11 @@
 
     </style>
     <template>
+
+        <!--uncomment this and the two lines in ready to use nutella-->
+        <!--<nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology" runid="default"-->
+                           <!--componentid="wallcology_admin"></nutella-connector>-->
+        
         <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
                              max-selections="4" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
@@ -199,8 +204,10 @@
 //                    'index': -1
 //                }];
 //                this.toggleSelectors = start.concat(this.toggleSelectors);
-                this.buttonSelectors = [];
-                this.toggleSelectors = [];
+
+                //comment these out to use the hardcoded values
+//                this.buttonSelectors = [];
+//                this.toggleSelectors = [];
             }
         });
     </script>

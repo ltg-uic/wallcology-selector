@@ -39,7 +39,7 @@
 
         paper-button.colorful {
             color: white;
-            background: var(--paper-blue-500);
+            background: #006699;
         }
 
         .vcontainer {
@@ -76,7 +76,7 @@
 
         <div class="horizontal layout">
             <div class="vcontainer spacer">
-                <paper-button active class="colorful" on-tap="toggleTapped"><span>{{currentToggle.name}}</span>
+                <paper-button class="colorful" on-tap="toggleTapped"><span>{{currentToggle.name}}</span>
                 </paper-button>
             </div>
             <div id="key" class="spacer">
@@ -85,7 +85,6 @@
                                        class="bug selector"></paper-icon-button>
                 </template>
             </div>
-
         </div>
 
     </template>

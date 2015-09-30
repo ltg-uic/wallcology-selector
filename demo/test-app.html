@@ -1,41 +1,18 @@
 <html>
 <head>
     <link href="../../polymer/polymer.html" rel="import">
-
-
     <link href="../wallcology-selector.html" rel="import">
-    <link href="../../nutella-connector/elements/nutella-connector.html" rel="import">
+    <!-- <link href="../../nutella-connector/nutella-connector.html" rel="import"> -->
 </head>
 
 <dom-module id="test-app">
     <style>
-        paper-button.colorful {
-            color: white;
-            background: var(--paper-blue-500);
-        }
+
     </style>
     <template>
-
-
-        <!--<nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology" runid="default"-->
-        <!--componentid="wallcology_admin"></nutella-connector>-->
-
         <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
                              max-selections="4" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
-
-
-        <div>currentToggle:<span>{{currentToggle.name}}</span></div>
-
-
-        <!--         <div>selectedButtons
-                <template is="dom-repeat" items="{{selectedItems}}">
-                    <span>{{item}}</span>
-                </template></div> -->
-
-        <paper-button active class="colorful" on-tap="testSwitchTapped"><span>switch to 0,[0,4,5]</span></paper-button>
-
-
     </template>
 
     <script>
@@ -177,8 +154,6 @@
                 } else {
                     // an individual user or its sub-properties changed
                     // check "changeRecord.path" to determine what changed
-
-
                 }
             },
             testSwitchTapped: function (e) {

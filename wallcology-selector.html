@@ -221,9 +221,9 @@
                     if (e.currentTarget.active) {
                         this.push('selectedItems', selectedItem);
                     } else {
-
-                        this.splice('selectedItems', selectedItem, 1);
-
+                        var index = this.selectedItems.indexOf(selectedItem);
+                        this.splice('selectedItems', index, 1);
+                        console.log('debug');
                     }
                 } else {
                     console.log('TOO MANY SELECTIONS');

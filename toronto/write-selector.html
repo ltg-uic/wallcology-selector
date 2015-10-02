@@ -2,11 +2,10 @@
 <head>
     <link href="../../polymer/polymer.html" rel="import">
     <link href="../wallcology-selector.html" rel="import">
-
-    <link href="../../nutella-connector/nutella-connector.html" rel="import">
+    <!-- <link href="../../nutella-connector/nutella-connector.html" rel="import"> -->
 </head>
 
-<dom-module id="test-app">
+<dom-module id="write-selector">
     <style>
 
     </style>
@@ -16,7 +15,7 @@
         <!--<nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology" runid="default"-->
                            <!--componentid="wallcology_admin"></nutella-connector>-->
 
-        <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
+        <wallcology-selector class="ws" toggle-selectors="{{toggleSelectors}}" button-selectors="{{buttonSelectors}}"
                              max-selections="4" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
     </template>
@@ -24,7 +23,7 @@
     <script>
         // element registration
         Polymer({
-            is: 'test-app',
+            is: 'write-selector',
 
             // add properties and methods on the element's prototype
             properties: {
@@ -169,7 +168,7 @@
 
             },
             currentToggleChanged: function (newValue, oldValue) {
-                console.log('toggle changed test-app', newValue, oldValue);
+                console.log('toggle changed write-selector', newValue, oldValue);
             },
             connectedChanged: function (newValue, oldValue) {
                 var me = this;
@@ -181,7 +180,7 @@
 
                             var start = [{
                                 'items': [],
-                                'name': 'Habitat ?  ',
+                                'name': 'Habitat ?',
                                 'index': -1
                             }];
                             me.toggleSelectors = start.concat(r.habitats);
@@ -197,7 +196,7 @@
 
 //                var start = [{
 //                    'items': [],
-//                    'name': 'Habitat ?  ',
+//                    'name': 'Habitat ?    ',
 //                    'index': -1
 //                }];
 //                this.toggleSelectors = start.concat(this.toggleSelectors);

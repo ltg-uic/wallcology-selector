@@ -154,6 +154,11 @@
                 console.log('toggle tapped');
                 if (this.currentToggle !== undefined) {
 
+                    if( this.currentToggle.index === -1) {
+                        var index = this.toggleSelectors.indexOf(this.currentToggle);
+                        this.splice('toggleSelectors', index, 1);
+                    }
+
                     //clear all the selections
                     for (var i = 0; i < this.selectedItems.length; i++) {
                         this.splice('selectedItems', i);
@@ -175,7 +180,7 @@
 
                     } else {
                         //restarts numbering
-                        this.currentToggle = this.findToggle(-1);
+                        this.currentToggle = this.findToggle(0);
                         this.disableButtons(undefined);
                     }
 

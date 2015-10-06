@@ -140,7 +140,7 @@
                 }
             },
             toggleSelectorsChanged: function (changeRecord) {
-                console.log('toggle', changeRecord);
+//                console.log('toggle', changeRecord);
                 if (this.currentToggle.name === undefined && this.toggleSelectors[0] !== undefined) {
                     for (var i = 0; i < this.toggleSelectors.length; i++) {
                         if (this.toggleSelectors[i].index === -1) {
@@ -151,7 +151,7 @@
                 }
             },
             toggleTapped: function (e) {
-                console.log('toggle tapped');
+//                console.log('toggle tapped');
                 if (this.currentToggle !== undefined) {
 
                     if( this.currentToggle.index === -1) {
@@ -202,7 +202,7 @@
                         b.disabled = true;
                     }
                 } else {
-                    console.log('indexs to disable', buttonIndexes);
+//                    console.log('indexs to disable', buttonIndexes);
                     var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
                     for (var i = 0; i < buttons.length; i++) {
                         var b = buttons[i];

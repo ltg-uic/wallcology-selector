@@ -157,10 +157,6 @@
                 if (this.currentToggle !== undefined) {
 
                     if( this.currentToggle.index === -1) {
-                        // console.log('Current toggle: '+JSON.stringify(this.currentToggle)+'. ToggleSelectors: '+JSON.stringify(this.toggleSelectors));
-                        //var index = this.toggleSelectors.indexOf(this.currentToggle);
-                        //this.splice('toggleSelectors', index);
-                        // console.log('Current toggle: '+JSON.stringify(this.currentToggle)+'. ToggleSelectors: '+JSON.stringify(this.toggleSelectors));
                         this.shift('toggleSelectors');
                     }
 
@@ -187,6 +183,7 @@
                         //restarts numbering
                         this.currentToggle = this.findToggle(0);
                         this.disableButtons(this.findToggle(0).items);
+
                     }
 
                 }

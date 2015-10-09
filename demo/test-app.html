@@ -2,7 +2,7 @@
 <head>
     <link href="../../polymer/polymer.html" rel="import">
     <link href="../wallcology-selector.html" rel="import">
-    <!-- <link href="../../nutella-connector/nutella-connector.html" rel="import"> -->
+    <link href="../../nutella-connector/nutella-connector.html" rel="import">
 </head>
 
 <dom-module id="test-app">
@@ -10,9 +10,19 @@
 
     </style>
     <template>
+
+
+        <nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology" runid="default"
+                           componentid="wallcology_admin"></nutella-connector>
+
         <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
-                             max-selections="4" selected-items="{{selectedItems}}"
+                             max-selections="13" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
+
+
+        <template id="test" is="dom-repeat" items="{{selectedItems}}">
+            <span>{{item.index}}</span>
+        </template>
     </template>
 
     <script>
@@ -37,104 +47,106 @@
                 toggleSelectors: {
                     type: Array,
                     notify: true,
-                    value: [
-                        {
-                            'items': [],
-                            'name': 'Habitat ?',
-                            'index': -1
-                        },
-                        {
-                            'items': [
-                                0,
-                                1,
-                                4,
-                                5
-                            ],
-                            'name': 'Habitat 1',
-                            'index': 0
-                        },
-                        {
-                            'items': [
-                                0,
-                                1,
-                                10,
-                                11
-                            ],
-                            'name': 'Habitat 2',
-                            'index': 1
-                        },
-                        {
-                            'items': [
-                                0,
-                                1,
-                                7,
-                                9
-                            ],
-                            'name': 'Habitat 3',
-                            'index': 2
-                        },
-                        {
-                            'items': [
-                                0,
-                                5,
-                                6,
-                                10,
-                                12
-                            ],
-                            'name': 'Habitat 4',
-                            'index': 3
-                        }
-                    ]
+                    value: []
+[
+                       {
+                           'items': [],
+                           'name': 'Habitat ?',
+                           'index': -1
+                       },
+                       {
+                           'items': [
+                               0,
+                               1,
+                               4,
+                               5
+                           ],
+                           'name': 'Habitat 1',
+                           'index': 0
+                       },
+                       {
+                           'items': [
+                               0,
+                               1,
+                               10,
+                               11
+                           ],
+                           'name': 'Habitat 2',
+                           'index': 1
+                       },
+                       {
+                           'items': [
+                               0,
+                               1,
+                               7,
+                               9
+                           ],
+                           'name': 'Habitat 3',
+                           'index': 2
+                       },
+                       {
+                           'items': [
+                               0,
+                               5,
+                               6,
+                               10,
+                               12
+                           ],
+                           'name': 'Habitat 4',
+                           'index': 3
+                       }
+                   ]
                 },
                 buttonSelectors: {
                     type: Array,
                     notify: true,
-                    value: [
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_01.svg",
-                            "index": 0
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_02.svg",
-                            "index": 1
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_03.svg",
-                            "index": 2
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_04.svg",
-                            "index": 3
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_05.svg",
-                            "index": 4
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_06.svg",
-                            "index": 5
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_07.svg",
-                            "index": 6
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_08.svg",
-                            "index": 7
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_09.svg",
-                            "index": 8
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_10.svg",
-                            "index": 9
-                        },
-                        {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_11.svg",
-                            "index": 10
-                        },
-                    ]
+                    value:
+                    [
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_01.svg",
+                           "index": 0
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_02.svg",
+                           "index": 1
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_03.svg",
+                           "index": 2
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_04.svg",
+                           "index": 3
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_05.svg",
+                           "index": 4
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_06.svg",
+                           "index": 5
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_07.svg",
+                           "index": 6
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_08.svg",
+                           "index": 7
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_09.svg",
+                           "index": 8
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_10.svg",
+                           "index": 9
+                       },
+                       {
+                           "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_11.svg",
+                           "index": 10
+                       },
+                   ]
                 },
                 connected: {
                     type: Boolean,
@@ -155,9 +167,6 @@
                     // an individual user or its sub-properties changed
                     // check "changeRecord.path" to determine what changed
                 }
-            },
-            testSwitchTapped: function (e) {
-                this.$.ws.switchToggleAndButtonSelectors(3, [0, 4, 5]);
             },
             toggleSelectorsChanged: function (changeRecord) {
 
@@ -182,6 +191,30 @@
                                 'index': -1
                             }];
                             me.toggleSelectors = start.concat(r.habitats);
+
+                            var a = {
+                                'items': [
+                                    0,
+                                    1,
+                                    2,
+                                        3,
+                                        4,
+                                        5,
+                                        6,
+                                        7,
+                                        8,
+                                        9,
+                                    10,
+                                        11,
+                                    12,
+                                    13
+                                ],
+                                'name': 'All Habitats',
+                                'index': 4
+                            };
+
+                            me.toggleSelectors.push(a);
+
                             console.log('MASTER CONFIG FETCHED');
 
                         }
@@ -192,14 +225,41 @@
             ready: function () {
                 this.selectedItems = [];
 
-                var start = [{
-                    'items': [],
-                    'name': 'Habitat ?  ',
-                    'index': -1
-                }];
-                this.toggleSelectors = start.concat(this.toggleSelectors);
-//                this.buttonSelectors = [];
-//                this.toggleSelectors = [];
+//                me.buttonSelectors = r.habitatItems;
+//
+//                var start = [{
+//                    'items': [],
+//                    'name': 'Habitat ?',
+//                    'index': -1
+//                }];
+//                me.toggleSelectors = start.concat(r.habitats);
+//
+//                var a = {
+//                    'items': [
+//                        0,
+//                        1,
+//                        2,
+//                        3,
+//                        4,
+//                        5,
+//                        6,
+//                        7,
+//                        8,
+//                        9,
+//                        10,
+//                        11,
+//                        12,
+//                        13
+//                    ],
+//                    'name': 'All Habitats',
+//                    'index': 4
+//                };
+//
+//                me.toggleSelectors.push(a);
+
+                //comment these out to use the hardcoded values
+                this.buttonSelectors = [];
+                this.toggleSelectors = [];
             }
         });
     </script>

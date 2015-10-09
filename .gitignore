@@ -4,3 +4,6 @@ test/temp
 bower_components
 .tmp
 test/bower_components/
+
+.idea/workspace.xml
+.DS_Store

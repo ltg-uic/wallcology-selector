@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e238ccc-e810-4e4d-b0bd-e6a56b161a1d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/test-app.html" afterPath="$PROJECT_DIR$/demo/test-app.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wallcology-selector.html" afterPath="$PROJECT_DIR$/wallcology-selector.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wallcology-selector.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,10 +33,10 @@
               <folding>
                 <element signature="e#1572#3286#0" expanded="false" />
                 <element signature="e#3321#5403#0" expanded="false" />
-                <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-                <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-                <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-                <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+                <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+                <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+                <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+                <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
               </folding>
             </state>
           </provider>
@@ -47,8 +45,8 @@
       <file leaf-file-name="wallcology-selector.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wallcology-selector.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.4879518">
-              <caret line="159" column="54" selection-start-line="159" selection-start-column="54" selection-end-line="159" selection-end-column="54" />
+            <state vertical-scroll-proportion="2.740964">
+              <caret line="169" column="54" selection-start-line="169" selection-start-column="54" selection-end-line="169" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -292,10 +290,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -323,10 +321,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -354,10 +352,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -385,10 +383,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -416,10 +414,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -447,10 +445,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -478,10 +476,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -509,10 +507,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -547,10 +545,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -585,10 +583,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -623,10 +621,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -661,10 +659,10 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -691,18 +689,18 @@
           <folding>
             <element signature="e#1572#3286#0" expanded="false" />
             <element signature="e#3321#5403#0" expanded="false" />
-            <marker date="1444427702000" expanded="true" signature="8448:8583" placeholder="[...]" />
-            <marker date="1444427702000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
-            <marker date="1444427702000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
-            <marker date="1444427702000" expanded="true" signature="8712:9146" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8448:8583" placeholder="[...]" />
+            <marker date="1444427960000" expanded="true" signature="8449:8582" placeholder="{&quot;name&quot;: 'Habitat ?'...}" />
+            <marker date="1444427960000" expanded="true" signature="8679:9246" placeholder="{&quot;name&quot;: 'All Habitats'...}" />
+            <marker date="1444427960000" expanded="true" signature="8712:9146" placeholder="[...]" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wallcology-selector.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4879518">
-          <caret line="159" column="54" selection-start-line="159" selection-start-column="54" selection-end-line="159" selection-end-column="54" />
+        <state vertical-scroll-proportion="2.740964">
+          <caret line="169" column="54" selection-start-line="169" selection-start-column="54" selection-end-line="169" selection-end-column="54" />
           <folding />
         </state>
       </provider>

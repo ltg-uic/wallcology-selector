@@ -157,7 +157,8 @@
                 if (this.currentToggle !== undefined) {
 
                     if( this.currentToggle.index === -1) {
-                        this.shift('toggleSelectors');
+                        var index = this.toggleSelectors.indexOf(this.currentToggle);
+                        this.splice('toggleSelectors', index, 1);
                     }
 
                     //clear all the selections
@@ -182,8 +183,7 @@
                     } else {
                         //restarts numbering
                         this.currentToggle = this.findToggle(0);
-                        this.disableButtons(this.findToggle(0).items);
-
+                        this.disableButtons(undefined);
                     }
 
                 }

@@ -2,7 +2,11 @@
 <head>
     <link href="../../polymer/polymer.html" rel="import">
     <link href="../wallcology-selector.html" rel="import">
-    <!-- <link href="../../nutella-connector/nutella-connector.html" rel="import"> -->
+    <link href="../paper-button/paper-button.html" rel="import">
+
+    <link href="../../nutella-connector/nutella-connector.html" rel="import">
+
+
 </head>
 
 <dom-module id="test-app">
@@ -10,9 +14,15 @@
 
     </style>
     <template>
+        <nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology"
+                           runid="default"></nutella-connector>
+
         <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
                              max-selections="4" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
+
+
+        <paper-button class="colorful" on-tap="forceMe"><span>force to ?</span></paper-button>
     </template>
 
     <script>
@@ -166,11 +176,11 @@
 
             },
             currentToggleChanged: function (newValue, oldValue) {
-                console.log('toggle changed test-app', newValue, oldValue);
+//                console.log('toggle changed test-app', newValue, oldValue);
             },
             connectedChanged: function (newValue, oldValue) {
                 var me = this;
-                console.log('connected changed', newValue, oldValue);
+//                console.log('connected changed', newValue, oldValue);
                 if (newValue === true) {
                     this.$.nutellaConn.nutella.net.request('master_configuration', {}, function (r) {
                         if (r !== undefined) {
@@ -189,17 +199,20 @@
                     });
                 }
             },
+            forceMe: function (e) {
+                this.$.ws.switchToggleAndButtonSelectors(-1, []);
+            },
             ready: function () {
                 this.selectedItems = [];
 
-                var start = [{
-                    'items': [],
-                    'name': 'Habitat ?  ',
-                    'index': -1
-                }];
-                this.toggleSelectors = start.concat(this.toggleSelectors);
-//                this.buttonSelectors = [];
-//                this.toggleSelectors = [];
+//                var start = [{
+//                    'items': [],
+//                    'name': 'Habitat ?  ',
+//                    'index': -1
+//                }];
+//                this.toggleSelectors = start.concat(this.toggleSelectors);
+                this.buttonSelectors = [];
+                this.toggleSelectors = [];
             }
         });
     </script>

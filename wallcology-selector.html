@@ -156,13 +156,9 @@
 //                console.log('toggle tapped');
                 if (this.currentToggle !== undefined) {
 
-                    if( this.currentToggle.index === -1) {
-                        // console.log('Current toggle: '+JSON.stringify(this.currentToggle)+'. ToggleSelectors: '+JSON.stringify(this.toggleSelectors));
-                        //var index = this.toggleSelectors.indexOf(this.currentToggle);
-                        //this.splice('toggleSelectors', index);
-                        // console.log('Current toggle: '+JSON.stringify(this.currentToggle)+'. ToggleSelectors: '+JSON.stringify(this.toggleSelectors));
-                        this.shift('toggleSelectors');
-                    }
+//                    if( this.currentToggle.index === -1) {
+//                        this.shift('toggleSelectors');
+//                    }
 
                     //clear all the selections
                     for (var i = 0; i < this.selectedItems.length; i++) {
@@ -199,7 +195,7 @@
                 }
             },
             disableButtons: function (buttonIndexes) {
-                if (buttonIndexes === undefined) {
+                if (buttonIndexes === undefined || buttonIndexes.length === 0) {
                     //disable all array
                     var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
                     for (var i = 0; i < buttons.length; i++) {
@@ -249,18 +245,20 @@
 
                 //do the buttons
                 this.selectedItems = [];
-                var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
-                for (var i = 0; i < buttons.length; i++) {
-                    var b = buttons[i];
-                    if (buttonIndexes.lastIndexOf(i) !== -1) {
-                        //b.disabled = false;
-                        b.active = true;
-                        this.push('selectedItems', this.buttonSelectors[i]);
-                    } else {
-                        b.active = false;
-                        //b.disabled = true;
-                    }
 
+                if (buttonIndexes.length > 0) {
+                    var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
+                    for (var i = 0; i < buttons.length; i++) {
+                        var b = buttons[i];
+                        if (buttonIndexes.lastIndexOf(i) !== -1) {
+                            //b.disabled = false;
+                            b.active = true;
+                            this.push('selectedItems', this.buttonSelectors[i]);
+                        } else {
+                            b.active = false;
+                            //b.disabled = true;
+                        }
+                    }
                 }
             },
             hasMaxSelections: function () {

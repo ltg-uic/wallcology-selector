@@ -5,21 +5,25 @@
     <link href="../paper-button/paper-button.html" rel="import">
 
     <link href="../../nutella-connector/nutella-connector.html" rel="import">
+    <link href="../styles/shared-styles.html" rel="import">
 
 
 </head>
 
 <dom-module id="test-app">
-    <style>
-
-    </style>
+    <style include="shared-styles"></style>
     <template>
         <nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology"
                            runid="default"></nutella-connector>
 
+        <div class="horizontal-section-container">
+
+            <div class="horizontal-section">
         <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
                              max-selections="13" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
+            </div>
+        </div>
 
 
         <paper-button class="colorful" on-tap="forceMe"><span>force to ?</span></paper-button>

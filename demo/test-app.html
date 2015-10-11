@@ -18,11 +18,15 @@
                            runid="default"></nutella-connector>
 
         <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
-                             max-selections="4" selected-items="{{selectedItems}}"
+                             max-selections="13" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
 
 
         <paper-button class="colorful" on-tap="forceMe"><span>force to ?</span></paper-button>
+
+        <template id="test" is="dom-repeat" items="{{selectedItems}}">
+            <span>{{item.index}}</span>
+        </template>
     </template>
 
     <script>
@@ -182,7 +186,7 @@
                 var me = this;
 //                console.log('connected changed', newValue, oldValue);
                 if (newValue === true) {
-                    this.$.nutellaConn.nutella.net.request('master_configuration', {}, function (r) {
+                    this.$.nutellaConn.nutella.net.request('master_configuration_test', {}, function (r) {
                         if (r !== undefined) {
                             me.buttonSelectors = r.habitatItems;
 

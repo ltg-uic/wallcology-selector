@@ -1,8 +1,6 @@
-
-    <link href="bower_components/polymer/polymer.html" rel="import">
-    <link href="bower_components/paper-button/paper-button.html" rel="import">
-    <link href="wallcology-selector.html" rel="import">
-
+<link href="bower_components/polymer/polymer.html" rel="import">
+<link href="bower_components/paper-button/paper-button.html" rel="import">
+<link href="wallcology-selector.html" rel="import">
 
 
 <dom-module id="test-app">
@@ -16,7 +14,6 @@
         <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors="{{buttonSelectors}}"
                              max-selections="13" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
-
 
 
         <paper-button on-click="handleClick">Click me!</paper-button>
@@ -42,7 +39,7 @@
                 currentToggle: {
                     type: Object,
                     notify: true,
-                    value: function() {
+                    value: function () {
                         return {};
                     },
                     observer: 'currentToggleChanged'
@@ -50,7 +47,7 @@
                 toggleSelectors: {
                     type: Array,
                     notify: true,
-                    value:  [
+                    value: [
                         {
                             'items': [
                                 0,

@@ -3,6 +3,8 @@
     <link href="bower_components/paper-button/paper-button.html" rel="import">
     <link href="wallcology-selector.html" rel="import">
 
+
+
 <dom-module id="test-app">
     <template id="ta">
         <style>
@@ -48,9 +50,9 @@
                 toggleSelectors: {
                     type: Array,
                     notify: true,
-                    value: [
+                    value:  [
                         {
-                            "items": [
+                            'items': [
                                 0,
                                 1,
                                 2,
@@ -65,14 +67,14 @@
                                 11,
                                 12
                             ],
-                            "name": "Habitat 1",
-                            "index": 0,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 1',
+                            'index': 0,
+                            'temperature': 0,
+                            'pipelength': 0,
+                            'brickarea': 0
                         },
                         {
-                            "items": [
+                            'items': [
                                 0,
                                 1,
                                 2,
@@ -87,14 +89,14 @@
                                 11,
                                 12
                             ],
-                            "name": "Habitat 2",
-                            "index": 1,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 2',
+                            'index': 1,
+                            'temperature': 0,
+                            'pipelength': 0,
+                            'brickarea': 0
                         },
                         {
-                            "items": [
+                            'items': [
                                 0,
                                 1,
                                 2,
@@ -109,14 +111,14 @@
                                 11,
                                 12
                             ],
-                            "name": "Habitat 3",
-                            "index": 2,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 3',
+                            'index': 2,
+                            'temperature': 0,
+                            'pipelength': 0,
+                            'brickarea': 0
                         },
                         {
-                            "items": [
+                            'items': [
                                 0,
                                 1,
                                 2,
@@ -131,11 +133,11 @@
                                 11,
                                 12
                             ],
-                            "name": "Habitat 4",
-                            "index": 3,
-                            "temperature": 0,
-                            "pipelength": 0,
-                            "brickarea": 0
+                            'name': 'Habitat 4',
+                            'index': 3,
+                            'temperature': 0,
+                            'pipelength': 0,
+                            'brickarea': 0
                         }
                     ]
                 },
@@ -144,73 +146,88 @@
                     notify: true,
                     value: [
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_00.svg",
-                            "index": 0,
-                            "color": "#FFC91B"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_00.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_00_0.svg',
+                            'index': 0,
+                            'color': '#FFC91B'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_01.svg",
-                            "index": 1,
-                            "color": "#5A6372"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_01.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_01_0.svg',
+                            'index': 1,
+                            'color': '#5A6372'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_02.svg",
-                            "index": 2,
-                            "color": "#FFDD00"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_02.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_02_0.svg',
+                            'index': 2,
+                            'color': '#FFDD00'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_03.svg",
-                            "index": 3,
-                            "color": "#2C4721"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_03.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_03_0.svg',
+                            'index': 3,
+                            'color': '#2C4721'
                         },
                         {
-                            "imgUrl": "http://ltg.cs.uic.edu/WC/icons/species_04.svg",
-                            "index": 4,
-                            "color": "#502B6E"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_04.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_04_0.svg',
+
+                            'index': 4,
+                            'color': '#502B6E'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_05.svg",
-                            "index": 5,
-                            "color": "#99cc33"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_05.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_05_0.svg',
+                            'index': 5,
+                            'color': '#99cc33'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_06.svg",
-                            "index": 6,
-                            "color": "#8975B5"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_06.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_06_0.svg',
+                            'index': 6,
+                            'color': '#8975B5'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_07.svg",
-                            "index": 7,
-                            "color": "#FAAA19"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_07.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_07_0.svg',
+                            'index': 7,
+                            'color': '#FAAA19'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_08.svg",
-                            "index": 8,
-                            "color": "#899C7C"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_08.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_08_0.svg',
+                            'index': 8,
+                            'color': '#899C7C'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_09.svg",
-                            "index": 9,
-                            "color": "#4AB6C8"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_09.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_09_0.svg',
+                            'index': 9,
+                            'color': '#4AB6C8'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/species_10.svg",
-                            "index": 10,
-                            "color": "#68734F"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_10.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_10_0.svg',
+                            'index': 10,
+                            'color': '#68734F'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/env_temp.svg",
-                            "index": 11,
-                            "color": "#FF5722"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_11.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_11_0.svg',
+                            'index': 11,
+                            'color': '#FF5722'
                         },
                         {
-                            "imgUrl": "https://ltg.cs.uic.edu/WC/icons/env_pipes.svg",
-                            "index": 12,
-                            "color": "#795548"
+                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_12.svg',
+                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_12_0.svg',
+                            'index': 12,
+                            'color': '#795548'
                         }
 
                     ]
                 }
+
             },
             observers: [
                 'selectedItemsChanged(selectedItems.*)',

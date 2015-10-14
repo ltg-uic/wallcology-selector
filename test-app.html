@@ -1,32 +1,23 @@
-<html>
-<head>
-    <link href="../../polymer/polymer.html" rel="import">
-    <link href="../wallcology-selector.html" rel="import">
-    <link href="../../paper-button/paper-button.html" rel="import">
 
-    <link href="../../nutella-connector/nutella-connector.html" rel="import">
-    <link href="../styles/shared-styles.html" rel="import">
-
-
-</head>
+    <link href="bower_components/polymer/polymer.html" rel="import">
+    <link href="bower_components/paper-button/paper-button.html" rel="import">
+    <link href="wallcology-selector.html" rel="import">
 
 <dom-module id="test-app">
-    <style include="shared-styles"></style>
-    <template>
-        <!--<nutella-connector connected={{connected}} id="nutellaConn" hostname="ltg.evl.uic.edu" appid="wallcology"-->
-                           <!--runid="default"></nutella-connector>-->
-
-        <div class="horizontal-section-container">
-
-            <div class="horizontal-section">
-        <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors={{buttonSelectors}}
+    <template id="ta">
+        <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+            }
+        </style>
+        <wallcology-selector id="ws" toggle-selectors="{{toggleSelectors}}" button-selectors="{{buttonSelectors}}"
                              max-selections="13" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
-            </div>
-        </div>
 
 
-        <paper-button class="colorful" on-tap="forceMe"><span>force to ?</span></paper-button>
+
+        <paper-button on-click="handleClick">Click me!</paper-button>
 
         <template id="test" is="dom-repeat" items="{{selectedItems}}">
             <span>{{item.index}}</span>
@@ -49,7 +40,9 @@
                 currentToggle: {
                     type: Object,
                     notify: true,
-                    value: {},
+                    value: function() {
+                        return {};
+                    },
                     observer: 'currentToggleChanged'
                 },
                 toggleSelectors: {
@@ -217,13 +210,7 @@
                         }
 
                     ]
-                },
-                connected: {
-                    type: Boolean,
-                    notify: true,
-                    value: false,
-                    observer: 'connectedChanged'
-                },
+                }
             },
             observers: [
                 'selectedItemsChanged(selectedItems.*)',
@@ -251,31 +238,32 @@
 //                console.log('toggle changed test-app', newValue, oldValue);
             },
             connectedChanged: function (newValue, oldValue) {
-                var me = this;
-//                console.log('connected changed', newValue, oldValue);
-                if (newValue === true) {
-                    this.$.nutellaConn.nutella.net.request('master_configuration_test', {}, function (r) {
-                        if (r !== undefined) {
-                            me.buttonSelectors = r.habitatItems;
-
-                            var start = [{
-                                'items': [],
-                                'name': 'Habitat ?  ',
-                                'index': -1
-                            }];
-                            me.toggleSelectors = start.concat(r.habitats);
-                            console.log('MASTER CONFIG FETCHED');
-
-                        }
-
-                    });
-                }
             },
+//            connectedChanged: function (newValue, oldValue) {
+//                var me = this;
+////                console.log('connected changed', newValue, oldValue);
+//                if (newValue === true) {
+//                    this.$.nutellaConn.nutella.net.request('master_configuration_test', {}, function (r) {
+//                        if (r !== undefined) {
+//                            me.buttonSelectors = r.habitatItems;
+//
+//                            var start = [{
+//                                'items': [],
+//                                'name': 'Habitat ?  ',
+//                                'index': -1
+//                            }];
+//                            me.toggleSelectors = start.concat(r.habitats);
+//                            console.log('MASTER CONFIG FETCHED');
+//
+//                        }
+//
+//                    });
+//                }
+//            },
             forceMe: function (e) {
                 this.$.ws.switchToggleAndButtonSelectors(-1, []);
             },
             ready: function () {
-                this.selectedItems = [];
 
                 var start = [{
                     'items': [],

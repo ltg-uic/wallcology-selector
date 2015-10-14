@@ -3,86 +3,86 @@
 <head>
 
 
-    <link href="./bower_components/polymer/polymer.html" rel="import">
-    <link href="./bower_components/paper-styles/paper-styles.html" rel="import">
-    <link href="./bower_components/paper-styles/color.html" rel="import">
+    <link href="../../polymer/polymer.html" rel="import">
+    <link href="../../paper-styles/paper-styles.html" rel="import">
+    <link href="../../paper-styles/color.html" rel="import">
 
 
-    <link href="./bower_components/paper-button/paper-button.html" rel="import">
-    <link href="./bower_components/paper-icon-button/paper-icon-button.html" rel="import">
-    <link href="./bower_components/iron-flex-layout/iron-flex-layout.html" rel="import">
-    <script type="text/javascript" src="./bower_components/predicates.js/browser/predicates.js"></script>
+    <link href="../../paper-button/paper-button.html" rel="import">
+    <link href="../../paper-icon-button/paper-icon-button.html" rel="import">
+
+    <script type="text/javascript" src="predicates.js"></script>
 
 
 </head>
 
 <dom-module id="wallcology-selector">
-    <style>
-
-        :host {
-
-        }
-
-        .pink {
-            background-color: var(--paper-pink-500);
-        }
-
-        .yellow {
-            background-color: var(--paper-yellow-500);
-        }
-
-        .bug {
-            --iron-icon-height: 45px;
-            --iron-icon-width: 45px;
-        }
-
-        paper-button.colorful {
-            color: white;
-            background: #006699;
-        }
-
-        .vcontainer {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
-        }
-
-        paper-icon-button[toggles].selector {
-            margin: 0px;
-            padding: 0px;
-            height: 45px;
-            width: 45px;
-            border-radius: 20px;
-            border: 1px solid white;
-        }
-
-        paper-icon-button[toggles] {
-            transition: background-color 0.3s;
-            border-radius: 20px;
-            border: 1px solid white;
-        }
-
-        paper-icon-button[toggles][active] {
-            background-color: #e8e8e8;
-            border-radius: 20px;
-            border: 1px solid #e8e8e8;
-        }
-
-        paper-icon-button[toggles][disabled] {
-            opacity: 0.25;
-            border-radius: 20px;
-            border: 1px solid white;
-        }
-
-        paper-button paper-ripple {
-            pointer-events: none;
-        }
-
-        .spacer {
-            margin: 5px;
-        }
-
-    </style>
     <template id="layout">
+        <style>
+
+            :host {
+
+            }
+
+            .pink {
+                background-color: var(--paper-pink-500);
+            }
+
+            .yellow {
+                background-color: var(--paper-yellow-500);
+            }
+
+            .bug {
+                --iron-icon-height: 45px;
+                --iron-icon-width: 45px;
+            }
+
+            paper-button.colorful {
+                color: white;
+                background: #006699;
+            }
+
+            .vcontainer {
+            @apply(--layout-horizontal);
+            @apply(--layout-center);
+            }
+
+            paper-icon-button[toggles].selector {
+                margin: 0px;
+                padding: 0px;
+                height: 45px;
+                width: 45px;
+                border-radius: 20px;
+                border: 1px solid white;
+            }
+
+            paper-icon-button[toggles] {
+                transition: background-color 0.3s;
+                border-radius: 20px;
+                border: 1px solid white;
+            }
+
+            paper-icon-button[toggles][active] {
+                background-color: #e8e8e8;
+                border-radius: 20px;
+                border: 1px solid #e8e8e8;
+            }
+
+            paper-icon-button[toggles][disabled] {
+                opacity: 0.25;
+                border-radius: 20px;
+                border: 1px solid white;
+            }
+
+            paper-button paper-ripple {
+                pointer-events: none;
+            }
+
+            .spacer {
+                margin: 5px;
+            }
+
+        </style>
 
         <div class="horizontal layout">
             <div class="vcontainer spacer">

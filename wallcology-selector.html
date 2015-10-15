@@ -20,7 +20,7 @@
     <link href="../paper-icon-button/paper-icon-button.html" rel="import">
 
     <script type="text/javascript" src="predicates.js"></script>
-<dom-module id="wallcology-selector">
+    <dom-module id="wallcology-selector">
     <template id="layout">
         <style>
 
@@ -44,6 +44,8 @@
             paper-button.colorful {
                 color: white;
                 background: #006699;
+                width: 100px;
+
             }
 
             .vcontainer {
@@ -61,16 +63,22 @@
 
             paper-icon-button[toggles] {
                 transition: background-color 0.3s;
+                height: 45px;
+                width: 45px;
                 border: 1px solid white;
             }
 
             paper-icon-button[toggles][active] {
                 /*background-color: #e8e8e8;*/
+                height: 45px;
+                width: 45px;
                 border: 1px solid white;
             }
 
             paper-icon-button[toggles][disabled] {
                 opacity: 0.45;
+                height: 45px;
+                width: 45px;
                 border: 1px solid white;
             }
 

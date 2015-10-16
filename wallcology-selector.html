@@ -241,10 +241,13 @@
                 }
             },
             disableButtons: function (buttonIndexes) {
-                if (this.debug) {
-                    console.log('disableButtons: ', buttonIndexes);
-                }
+
                 if (buttonIndexes === undefined || buttonIndexes.length === 0) {
+
+                    if (this.debug) {
+                        console.log('disableButtons: ', buttonIndexes);
+                    }
+
                     //disable all array
                     var buttons = Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
                     for (var i = 0; i < buttons.length; i++) {

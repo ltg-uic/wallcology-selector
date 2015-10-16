@@ -15,9 +15,6 @@
                              max-selections="13" selected-items="{{selectedItems}}"
                              current-toggle="{{currentToggle}}"></wallcology-selector>
 
-
-        <paper-button on-click="handleClick">Click me!</paper-button>
-
         <template id="test" is="dom-repeat" items="{{selectedItems}}">
             <span>{{item.index}}</span>
         </template>
@@ -195,20 +192,6 @@
                             'index': 10,
                             'color': '#68734F'
                         }
-//                        ,
-//                        {
-//                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_11.svg',
-//                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_11_0.svg',
-//                            'index': 11,
-//                            'color': '#FF5722'
-//                        },
-//                        {
-//                            'highlightUrl': 'https://ltg.cs.uic.edu/WC/icons/species_12.svg',
-//                            'activeUrl': 'https://ltg.cs.uic.edu/WC/icons/species_12_0.svg',
-//                            'index': 12,
-//                            'color': '#795548'
-//                        }
-
                     ]
                 }
 
@@ -272,8 +255,6 @@
                     'index': -1
                 }];
                 this.toggleSelectors = start.concat(this.toggleSelectors);
-
-
             }
         });
     </script>

@@ -359,6 +359,9 @@
                     }
                 }
             },
+            getAllButtons: function() {
+                return Polymer.dom(this.$.key).querySelectorAll('paper-icon-button');
+            },
             toggleTapped: function (e) {
                 if (this.debug) {
                     console.log('toggleTapped: ', e);

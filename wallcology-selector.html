@@ -28,6 +28,11 @@
 
             }
 
+
+            :host {
+
+            }
+
             .pink {
                 background-color: var(--paper-pink-500);
             }
@@ -48,6 +53,8 @@
                 background-color: #135b78 !important;
                 /*background: #237599;*/
                 /*margin-top: 1px;*/
+                height: 33px;
+                width: 73px;
                 font-size: 12px;
                 text-transform: none;
             }
@@ -113,7 +120,7 @@
 
         <div class="selector-container horizontal layout">
             <div class="vcontainer spacer">
-                <paper-button class="colorful" on-tap="toggleTapped"><span>{{currentToggle.name}}</span>
+                <paper-button class="colorful" on-tap="toggleTapped" noink><span>{{currentToggle.name}}</span>
                 </paper-button>
             </div>
             <div id="key" class="spacer">
